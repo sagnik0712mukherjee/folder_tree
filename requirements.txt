@@ -1,0 +1,5 @@
+# Needed to run the app from source:
+pywebview>=5.0
+
+# Needed only to build the .exe / .app yourself:
+pyinstaller>=6.0

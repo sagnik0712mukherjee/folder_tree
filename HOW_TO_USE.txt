@@ -1,0 +1,32 @@
+FOLDER TREE VIEWER - How to use
+================================
+
+What it does: shows everything inside a folder as a neat, clickable tree.
+It only reads folder names. It never changes or deletes anything and needs no internet.
+
+1. Put the app inside the folder you want to look at.
+   (Mac: unzip the download first.)
+2. Double-click the app.
+3. A window opens with that folder's tree. Click a folder to open or close it.
+
+To look at a different folder, just move the app into that folder and double-click again.
+
+Buttons in the window:
+  Refresh               - update the view
+  Show / hide files     - include or leave out files
+  Expand all / Collapse all
+  Search box            - find a folder by name
+
+FIRST-TIME WARNINGS (normal, you only see them once)
+
+Windows:
+  A blue screen says "Windows protected your PC".
+  Click "More info", then "Run anyway".
+
+Mac:
+  Right-click the app, choose "Open", then click "Open" again.
+  If the window says "One quick step": in Finder, drag the app into the folder
+  you want to view, then double-click it there.
+  If the Mac asks to allow access to Desktop / Documents / Downloads: click Allow.
+
+Works on: Windows 10/11, and Macs with Apple chips (M1 or newer).
