@@ -1,32 +1,42 @@
-FOLDER TREE VIEWER - How to use
-================================
+FOLDER TREE VIEWER (Mac) - How to use
+=====================================
 
 What it does: shows everything inside a folder as a neat, clickable tree.
 It only reads folder names. It never changes or deletes anything and needs no internet.
 
-1. Put the app inside the folder you want to look at.
-   (Mac: unzip the download first.)
-2. Double-click the app.
-3. A window opens with that folder's tree. Click a folder to open or close it.
+1. Unzip the download. You get an app called "Folder Tree Viewer".
+2. Drag the app into the folder you want to look at (use Finder).
+3. Double-click the app.
+4. A window opens with that folder's tree. Click a folder to open or close it.
 
-To look at a different folder, just move the app into that folder and double-click again.
+To look at a different folder, drag the app into that folder and double-click again.
 
 Buttons in the window:
   Refresh               - update the view
   Show / hide files     - include or leave out files
-  Expand all / Collapse all
+  Expand all            - opens EVERY folder, all the way down to the lowest level.
+                          (Click "Show / hide files" too if you want the files inside
+                          those folders to appear.)
+  Collapse all          - closes everything back to the top folder
   Search box            - find a folder by name
 
-FIRST-TIME WARNINGS (normal, you only see them once)
+FIRST-TIME SECURITY STEPS (you only do this once)
 
-Windows:
-  A blue screen says "Windows protected your PC".
-  Click "More info", then "Run anyway".
+The Mac does not know this app, so it blocks it the first time.
 
-Mac:
-  Right-click the app, choose "Open", then click "Open" again.
-  If the window says "One quick step": in Finder, drag the app into the folder
-  you want to view, then double-click it there.
-  If the Mac asks to allow access to Desktop / Documents / Downloads: click Allow.
+  1. Double-click the app. The Mac says it "could not verify" the app.
+     Click "Done" (NOT "Move to Bin").
+  2. Open the Apple menu > System Settings > Privacy & Security.
+  3. Scroll down to the Security section. Next to the message about
+     "Folder Tree Viewer", click "Open Anyway". Enter your Mac password
+     (or use Touch ID) and click "Open".
+     (The button stays for about an hour. If it has gone, double-click the app again.)
 
-Works on: Windows 10/11, and Macs with Apple chips (M1 or newer).
+Older Macs: right-click the app, choose "Open", then "Open" again.
+
+Other messages you may see:
+  "One quick step"  - In Finder, drag the app into the folder you want to view,
+                      then double-click it there.
+  Access to Desktop / Documents / Downloads - Click Allow.
+
+Works on: Macs with Apple chips (M1 or newer).

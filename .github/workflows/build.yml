@@ -7,17 +7,7 @@ on:
 
 jobs:
   build:
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - os: windows-latest
-            name: Windows
-            flags: --onefile
-          - os: macos-latest
-            name: Mac
-            flags: ""
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -28,26 +18,17 @@ jobs:
       - name: Install tools
         run: pip install pywebview pyinstaller
 
-      - name: Build app
+      - name: Build Mac app
         run: >
-          pyinstaller --noconsole --windowed ${{ matrix.flags }}
+          pyinstaller --noconsole --windowed
           --exclude-module tkinter
           --name "Folder Tree Viewer"
           foldertree_app.py
 
       - name: Zip Mac app
-        if: matrix.name == 'Mac'
         run: ditto -c -k --keepParent "dist/Folder Tree Viewer.app" "dist/Folder-Tree-Viewer-Mac.zip"
 
-      - name: Upload Windows exe
-        if: matrix.name == 'Windows'
-        uses: actions/upload-artifact@v4
-        with:
-          name: Folder-Tree-Viewer-Windows
-          path: dist/Folder Tree Viewer.exe
-
       - name: Upload Mac app
-        if: matrix.name == 'Mac'
         uses: actions/upload-artifact@v4
         with:
           name: Folder-Tree-Viewer-Mac
