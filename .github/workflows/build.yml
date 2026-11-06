@@ -1,0 +1,54 @@
+name: Build Folder Tree Viewer
+
+on:
+  workflow_dispatch:   # lets you click "Run workflow" manually
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            name: Windows
+            flags: --onefile
+          - os: macos-latest
+            name: Mac
+            flags: ""
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tools
+        run: pip install pywebview pyinstaller
+
+      - name: Build app
+        run: >
+          pyinstaller --noconsole --windowed ${{ matrix.flags }}
+          --exclude-module tkinter
+          --name "Folder Tree Viewer"
+          foldertree_app.py
+
+      - name: Zip Mac app
+        if: matrix.name == 'Mac'
+        run: ditto -c -k --keepParent "dist/Folder Tree Viewer.app" "dist/Folder-Tree-Viewer-Mac.zip"
+
+      - name: Upload Windows exe
+        if: matrix.name == 'Windows'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Folder-Tree-Viewer-Windows
+          path: dist/Folder Tree Viewer.exe
+
+      - name: Upload Mac app
+        if: matrix.name == 'Mac'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Folder-Tree-Viewer-Mac
+          path: dist/Folder-Tree-Viewer-Mac.zip
